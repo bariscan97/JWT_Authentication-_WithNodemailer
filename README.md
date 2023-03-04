@@ -16,7 +16,6 @@ SMTP_PASS=<YOUR_GMAIL_PASSWORD>
 ```
 * bcrypt: "^5.1.0",
 * cookie-parser: "^1.4.6",
-* cookie-session: "^2.0.0",
 * cors: "^2.8.5",
 * dotenv: "^16.0.3",
 * express: "^4.18.2",
