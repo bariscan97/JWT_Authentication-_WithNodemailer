@@ -29,7 +29,7 @@ const registerSendEmail= async(req,res,next)=>{
             expiresIn :JWT_EXPIRE
             })
             const resetEmail=req.body.email
-            const resetPasswordUrl = `http://localhost:${process.env.PORT}/auth/registerVerify?token=${token}`;
+            const resetPasswordUrl = `http://localhost:${process.env.PORT}/api/auth/registerVerify?token=${token}`;
             const emailTemplate=`
                     <h3>Reset Your Password</h3>
                     <p>This <a href='${resetPasswordUrl}' target='_blank'>link</a>will expire in 1 hour</p>

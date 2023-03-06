@@ -7,8 +7,9 @@ const getAccessRoute=(req,res,next)=>{
             
             
             const access = req.headers.authorization.split(" ")[1]
-            
-            if (!(access =="null" || access =="logout")){
+           
+            if (!(access == "null" || access =="logout")){
+                
                 const decoded =jwt_decode(access);
                 
                 req.user={

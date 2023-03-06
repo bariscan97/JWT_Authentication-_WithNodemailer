@@ -4,6 +4,7 @@ const bcrypt=require("bcrypt")
 const sendEmail= require("../helpers/libraries/SendEmail")
 
 
+
 const userGet=async(req,res,next)=>{
     try{
        const user=await User.findOne({email:req.user.email,name:req.user.name})
@@ -30,7 +31,6 @@ const userGet=async(req,res,next)=>{
 }
 
 
-
 const changePassword= async(req,res,next)=>{
     try{    
         const user=await User.findOne({email:req.user.email})
@@ -39,7 +39,7 @@ const changePassword= async(req,res,next)=>{
         
         await user.save()
         
-        const resetPasswordUrl = `http://localhost:${process.env.PORT}/auth/resetpassword?resetPasswordToken=${resetPasswordToken}`;
+        const resetPasswordUrl = `http://localhost:${process.env.PORT}/api/auth/resetpassword?resetPasswordToken=${resetPasswordToken}`;
 
         const emailTemplate = `
             <h3>Reset Your Password</h3>
@@ -86,7 +86,7 @@ const forgotPassword = async(req,res,next)=>{
         const resetPasswordToken =await user.usetResetPassword()
         console.log(resetPasswordToken)
         await user.save()
-        const resetPasswordUrl = `http://localhost:${process.env.PORT}/auth/resetpassword?resetPasswordToken=${resetPasswordToken}`;
+        const resetPasswordUrl = `http://localhost:${process.env.PORT}/api/auth/resetpassword?resetPasswordToken=${resetPasswordToken}`;
 
         const emailTemplate = `
             <h3>Reset Your Password</h3>
