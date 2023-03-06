@@ -4,19 +4,31 @@ const bcrypt=require("bcrypt")
 const sendEmail= require("../helpers/libraries/SendEmail")
 
 
-
 const userGet=async(req,res,next)=>{
-    
-    if (req.params.userid === req.user.name){
-        
-        res.json({
-            success:true,
-            data:await User.findOne({email:req.user.email})
-        })
-    }else{
-    return next(new CustomError("you need to login",404))
+    try{
+       const user=await User.findOne({email:req.user.email,name:req.user.name})
+       if (user){
+            
+            res
+            .status(200)
+            .json({
+                success:true,
+                data:{
+                    email:user.email,
+                    name:user.name
+                 }
+           })
+     
+      }else{
+            return next(new CustomError("User not found",404))
+       }
+    }catch(err){
+        return next(new CustomError("you need to login",404))
     }
+
+
 }
+
 
 
 const changePassword= async(req,res,next)=>{

@@ -5,9 +5,9 @@ const user=require("./user")
 
 const router= express.Router()
 
-router.use("/auth",auth)
+router.use("/api/auth",auth)
 
-router.use("/",user)
+router.use("api/",user)
 
 
 module.exports=router
