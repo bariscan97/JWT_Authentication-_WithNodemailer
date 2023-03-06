@@ -1,7 +1,7 @@
 const jwt  =  require("jsonwebtoken")
 const SendJwt = (user,req,res)=>{
     
-    token=generateJwtFromUser(req)
+    const token=generateJwtFromUser(req)
     
     res
     .status(200)

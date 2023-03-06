@@ -27,6 +27,11 @@ const UserSchema = new Schema({
         require:true,
         minlength:6
     },
+    createdAt : {
+        type : Date,
+        default : Date.now
+
+    },
     resetPasswordToken:{
         type:String
     },
