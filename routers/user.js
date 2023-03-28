@@ -4,7 +4,9 @@ const {getAccessRoute} =require("../middlewares/authing/Auth")
 const router=express.Router()
 
 
-router.get("/",userGet)
+
+
+router.get("/",getAccessRoute,userGet)
 
 router.put("/changePassword",getAccessRoute,changePassword)
 

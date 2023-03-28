@@ -7,7 +7,7 @@ const router= express.Router()
 
 router.use("/api/auth",auth)
 
-router.use("api/profile",user)
+router.use("/api/profile",user)
 
 
 module.exports=router
