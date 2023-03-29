@@ -1,6 +1,4 @@
-# JWT_authorization_Nodemailer
-
-
+# JWT_Authentication-_WithNodemailer
 
 ## Environment config
 ```
