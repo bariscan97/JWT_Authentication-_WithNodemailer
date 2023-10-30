@@ -1,6 +1,6 @@
 const express=require("express")
 const {userGet,changePassword,deleteUser}=require("../controller/userController")
-const {getAccessRoute} =require("../middlewares/authing/Auth")
+const {getAccessRoute} =require("../middlewares/Auth/Auth")
 const router=express.Router()
 
 

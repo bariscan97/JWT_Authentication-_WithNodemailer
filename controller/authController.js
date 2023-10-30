@@ -125,7 +125,7 @@ const login = async (req,res,next)=>{
 const logout=(req,res,next)=>{
     res
     .status(200)
-    .cookie("access","logout",{
+    .cookie("access","",{
         httpOnly:true,
         expires: new Date(Date.now()),
         secure: process.env.NODE_ENV === "development" ? false : true

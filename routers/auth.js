@@ -1,7 +1,7 @@
 const express=require("express")
 const {login,logout,registerSendEmail,registerVerify}=require("../controller/authController")
 const {forgotPassword,resetPassword}=require("../controller/userController")
-const {getAccessRoute} =require("../middlewares/authing/Auth")
+const {getAccessRoute} =require("../middlewares/Auth/Auth")
 
 const router=express.Router()
 
