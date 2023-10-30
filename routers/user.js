@@ -13,6 +13,6 @@ router.put("/changePassword",getAccessRoute,changePassword)
 router.put("/deleteUser",getAccessRoute,deleteUser)
 
 
-
+ 
 module.exports=router
 
